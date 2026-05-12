@@ -48,10 +48,21 @@ our open-source AI-first EDA tool.
 
 ### Featured repositories
 
+#### Edge AI · E1M + Alp SDK
+
 | Repository | Description |
 |---|---|
 | [**alp-sdk**](https://github.com/alplabai/alp-sdk) | Embedded SDK for E1M Systems-on-Module — Zephyr / Yocto / bare-metal |
+| [**alp-sdk-vscode**](https://github.com/alplabai/alp-sdk-vscode) | VS Code extension — schema-aware `board.yaml` editor, GUI configurator, west wrappers |
 | [**e1m-spec**](https://github.com/alplabai/e1m-spec) | E1M open-standard pinout + mechanical envelope (35×35 + 45×65 mm) |
+| [**cc3501e-firmware**](https://github.com/alplabai/cc3501e-firmware) | TI CC3501E Wi-Fi 6 + BLE 5.4 coprocessor firmware (companion to alp-sdk on E1M-AEN) |
+| [**gd32g5x3-firmware-library**](https://github.com/alplabai/gd32g5x3-firmware-library) | Vendored GD32G5x3 Firmware Library — consumed by alp-sdk's gd32-bridge build |
+| [**alp-zephyr-modules**](https://github.com/alplabai/alp-zephyr-modules) | Out-of-tree Zephyr board files for the E1M-* EVKs |
+
+#### Open EDA · Signex
+
+| Repository | Description |
+|---|---|
 | [**signex**](https://github.com/alplabai/signex) | Signex EDA editor — Rust + Iced + wgpu |
 | [ngspice](https://github.com/alplabai/ngspice) | SPICE circuit simulator (fork with Signex integration patches) |
 | [openEMS](https://github.com/alplabai/openEMS) | EC-FDTD electromagnetic solver (fork with fixes and CUDA engine) |
