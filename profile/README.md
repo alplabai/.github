@@ -38,10 +38,14 @@ our open-source AI-first EDA tool.
 
 ### Current status
 
-- **Alp SDK**: v0.3 candidate — `board.yaml` project config, hardware-
-  revision tracking, full peripheral surface, VS Code extension, EEPROM
-  manifest + production-test tooling all in.  V0.4 lands Yocto first-
-  class for V2N / V2N-M1, secure boot + OTA on AEN-Zephyr.
+- **Alp SDK**: v0.8.1 — heterogeneous `board.yaml` (one config drives
+  per-core Zephyr / Yocto / bare-metal builds), 20+ chip drivers, ML
+  inference dispatch, secure boot + A/B OTA, and first-class Yocto for
+  V2N / V2N-M1.  Silicon-verified on two SoM families: E1M-X V2N (the
+  GD32-bridge campaign — SPI/I²C link, HIL soak, A/B OTA) and E1M-AEN801
+  (Alif Ensemble E8 peripheral matrix + the cc3501e Wi-Fi 6 / BLE
+  bridge); broader SoM coverage (i.MX 93, the AEN30x–70x rollout) is
+  expanding.
 - **Signex**: v0.6 candidate (full schematic editor).  Schematic viewer,
   editor, and canvas working; next up is ERC validation, PDF/BOM output,
   then PCB.
@@ -87,3 +91,4 @@ LVGL, CMSIS-DSP.
   [contributing guide](https://github.com/alplabai/signex/blob/dev/CONTRIBUTING.md)
   and pick up a [good first issue](https://github.com/alplabai/signex/labels/good%20first%20issue).
 - Each repo carries its own `CONTRIBUTING` file + issue templates.
+
