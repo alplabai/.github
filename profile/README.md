@@ -10,7 +10,7 @@ our open-source AI-first EDA tool.
 
 #### Edge AI · E1M + Alp SDK
 
-- **[E1M Standard 1.0](https://github.com/alplabai/e1m-spec)** — open
+- **[E1M Standard 1.2](https://github.com/alplabai/e1m-spec)** — open
   pinout + mechanical envelope for AI-capable Systems-on-Module
   (35×35 mm and 45×65 mm form factors).  Lets any silicon vendor ship
   pin-compatible modules; lets any product board target one connector
