@@ -10,45 +10,55 @@ our open-source AI-first EDA tool.
 
 #### Edge AI · E1M + Alp SDK
 
-- **[E1M Standard 1.2](https://github.com/alplabai/e1m-spec)** — open
-  pinout + mechanical envelope for AI-capable Systems-on-Module
-  (35×35 mm and 45×65 mm form factors).  Lets any silicon vendor ship
-  pin-compatible modules; lets any product board target one connector
-  and accept multiple SoMs.
-- **[Alp SDK](https://github.com/alplabai/alp-sdk)** — embedded firmware
-  framework for E1M modules.  A single `board.yaml` drives Zephyr,
-  Yocto, and bare-metal builds across Alif Ensemble, Renesas RZ/V2N,
-  NXP i.MX 93, and DEEPX DX-M1 silicon.  Ships with 20+ chip drivers,
-  ML inference dispatch (TFLite Micro → Ethos-U / DRP-AI / DEEPX),
-  runtime hardware identification (ADC + on-module EEPROM manifest),
-  and a VS Code configurator.
+- **[E1M Standard 1.2](https://github.com/alplabai/e1m-spec)** — open,
+  silicon-agnostic pinout + mechanical envelope for AI-capable
+  Systems-on-Module in two form factors: **E1M** (35 × 35 mm, 312 pads)
+  and **E1M-X** (45 × 65 mm, 496 pads).  The standard fixes the universe
+  of pads and which signals each may carry; silicon variants — ALP-AEN
+  (Alif Ensemble), ALP-X-V2N (Renesas RZ/V2N), ALP-X-V2N-M1 (DRP-AI3 +
+  DEEPX M1) — declare their routed subset in per-variant SoM manifests.
+  Any vendor can ship pin-compatible modules; any product board targets
+  one connector and accepts multiple SoMs.
+- **[Alp SDK](https://github.com/alplabai/alp-sdk)** — unification C/C++
+  firmware framework for E1M modules.  A single `board.yaml` drives
+  Zephyr, Yocto, and bare-metal builds across Alif Ensemble, Renesas
+  RZ/V2N, NXP i.MX 93, and DEEPX DX-M1 silicon — single-OS or
+  heterogeneous (Zephyr + Yocto + bare-metal coexisting on one SoM from
+  one declarative project).  Ships with 20+ chip drivers, ML inference
+  dispatch (TFLite Micro → Ethos-U / DRP-AI / DEEPX), runtime hardware
+  identification (ADC + on-module EEPROM manifest), and a VS Code
+  configurator.
 
 #### Open EDA · Signex
 
-- **[Signex](https://github.com/alplabai/signex)** is a KiCad-compatible
-  schematic and PCB editor built in Rust with GPU-accelerated rendering.
-  It aims to deliver Altium Designer-quality UX on top of the open KiCad
-  file format — engineers get a better editor without leaving the
-  ecosystem they trust.
-  - **Signex Community** (Apache-2.0) — full schematic editor, PCB editor
-    with interactive routing and DRC, 3D viewer, simulation, plugin
-    system.  Free forever.
+- **[Signex](https://github.com/alplabai/signex)** is an open-source,
+  AI-first EDA suite built in Rust with GPU-accelerated rendering and an
+  Altium Designer-quality UI — schematic + PCB editor, 3D viewer,
+  simulation, plugin system.  Native file formats (`.snxsch`, `.snxpcb`,
+  `.snxsym`, `.snxfpt`) are line-diffable in git and ~5× smaller than the
+  equivalent JSON.  Migrating from KiCad?  The optional
+  [signex-kicad-import](https://github.com/alplabai/signex-kicad-import)
+  companion (GPL-3.0-or-later, distributed independently) converts
+  `.kicad_sch` / `.kicad_pcb` / `.kicad_pro` one-way to Signex's native
+  formats.
+  - **Signex Community** (Apache-2.0) — full schematic + PCB editor, 3D
+    viewer, simulation, plugin system.  Free forever.
   - **Signex Pro** (subscription) — adds Signal AI (Claude-powered design
     copilot), real-time collaboration, and Signex 365 cloud PLM.
 
 ### Current status
 
-- **Alp SDK**: v0.8.1 — heterogeneous `board.yaml` (one config drives
-  per-core Zephyr / Yocto / bare-metal builds), 20+ chip drivers, ML
-  inference dispatch, secure boot + A/B OTA, and first-class Yocto for
-  V2N / V2N-M1.  Silicon-verified on two SoM families: E1M-X V2N (the
-  GD32-bridge campaign — SPI/I²C link, HIL soak, A/B OTA) and E1M-AEN801
-  (Alif Ensemble E8 peripheral matrix + the cc3501e Wi-Fi 6 / BLE
-  bridge); broader SoM coverage (i.MX 93, the AEN30x–70x rollout) is
-  expanding.
-- **Signex**: v0.6 candidate (full schematic editor).  Schematic viewer,
-  editor, and canvas working; next up is ERC validation, PDF/BOM output,
-  then PCB.
+- **Alp SDK**: **v0.11.1**.  Every chip driver, peripheral wrapper, and
+  example builds clean on `native_sim`; two SoM families now carry
+  silicon evidence — E1M-X V2N (verified v0.6) and E1M-AEN801 (Alif
+  Ensemble E8 peripheral matrix + NPU inference, verified v0.8).
+  Remaining families (i.MX 93, V2N-M1/DEEPX, AEN30x–70x) are pre-silicon.
+- **Signex**: **v0.14.0** — the **Footprint Editor** milestone.  The
+  `.snxfpt` pad + parametric-sketch editor is live (Apache-clean
+  Newton-LM constraint solver, 19 constraint kinds, bake to
+  pads / silk / courtyard).  Carries forward the v0.13 clean-room
+  schematic renderer and the Symbol & Library surfaces (`.snxsym`
+  envelope, Library Browser, Pick Symbol / Footprint).
 
 ### Featured repositories
 
@@ -56,9 +66,10 @@ our open-source AI-first EDA tool.
 
 | Repository | Description |
 |---|---|
-| [**alp-sdk**](https://github.com/alplabai/alp-sdk) | Embedded SDK for E1M Systems-on-Module — Zephyr / Yocto / bare-metal |
+| [**alp-sdk**](https://github.com/alplabai/alp-sdk) | Unification C/C++ SDK for E1M Systems-on-Module — Zephyr / Yocto / bare-metal |
 | [**alp-sdk-vscode**](https://github.com/alplabai/alp-sdk-vscode) | VS Code extension — schema-aware `board.yaml` editor, GUI configurator, west wrappers |
-| [**e1m-spec**](https://github.com/alplabai/e1m-spec) | E1M open-standard pinout + mechanical envelope (35×35 + 45×65 mm) |
+| [**alp-sdk-community**](https://github.com/alplabai/alp-sdk-community) | Community-contributed chip drivers + libraries (Tier 2) — consumable from the alp-sdk workspace |
+| [**e1m-spec**](https://github.com/alplabai/e1m-spec) | E1M open-standard pinout + mechanical envelope (35×35 / 312-pad + 45×65 mm / 496-pad) |
 | [**cc3501e-firmware**](https://github.com/alplabai/cc3501e-firmware) | TI CC3501E Wi-Fi 6 + BLE 5.4 coprocessor firmware (companion to alp-sdk on E1M-AEN) |
 | [**gd32g5x3-firmware-library**](https://github.com/alplabai/gd32g5x3-firmware-library) | Vendored GD32G5x3 Firmware Library — consumed by alp-sdk's gd32-bridge build |
 | [**alp-zephyr-modules**](https://github.com/alplabai/alp-zephyr-modules) | Out-of-tree Zephyr board files for the E1M-* EVKs |
@@ -67,8 +78,8 @@ our open-source AI-first EDA tool.
 
 | Repository | Description |
 |---|---|
-| [**signex**](https://github.com/alplabai/signex) | Signex EDA editor — Rust + Iced + wgpu |
-| [ngspice](https://github.com/alplabai/ngspice) | SPICE circuit simulator (fork with Signex integration patches) |
+| [**signex**](https://github.com/alplabai/signex) | Signex EDA suite — Rust + Iced 0.14 + wgpu; native `.snx*` formats |
+| [**signex-kicad-import**](https://github.com/alplabai/signex-kicad-import) | GPL-3.0 one-way KiCad → Signex converter (distributed independently) |
 | [openEMS](https://github.com/alplabai/openEMS) | EC-FDTD electromagnetic solver (fork with fixes and CUDA engine) |
 | [elmerfem](https://github.com/alplabai/elmerfem) | Elmer FEM solver (fork for thermal and DC IR drop analysis) |
 
@@ -78,17 +89,18 @@ our open-source AI-first EDA tool.
 i.MX 93, DEEPX DX-M1, TFLite Micro, Arm Ethos-U, Renesas DRP-AI, MbedTLS,
 LVGL, CMSIS-DSP.
 
-**EDA**: Rust, wgpu, Iced 0.14, KiCad S-expression format, ngspice
+**EDA**: Rust, wgpu, Iced 0.14, native `.snx*` file formats, ngspice
 (SPICE), OpenEMS (EM/FDTD), Elmer (FEM), Supabase (collaboration + PLM).
 
 ### Get involved
 
 - **[Alp SDK](https://github.com/alplabai/alp-sdk)** — embedded firmware
-  on the open E1M pinout; check the `docs/getting-started.md` walkthrough
-  and the per-peripheral examples for an entry point.
+  on the open E1M pinout; rendered docs at
+  [docs.alplab.ai/sdk/introduction](https://docs.alplab.ai/sdk/introduction),
+  community at [community.alplab.ai](https://community.alplab.ai/).
 - **[Signex](https://github.com/alplabai/signex)** — open EDA for
   schematic + PCB design; see the
-  [contributing guide](https://github.com/alplabai/signex/blob/dev/CONTRIBUTING.md)
+  [contributing guide](https://github.com/alplabai/signex/blob/main/CONTRIBUTING.md)
   and pick up a [good first issue](https://github.com/alplabai/signex/labels/good%20first%20issue).
 - Each repo carries its own `CONTRIBUTING` file + issue templates.
 
