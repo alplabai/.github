@@ -1,0 +1,135 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 950" width="1600" height="950" role="img" aria-label="Alp Lab E1M platform stack: AI Framework, Dev Tooling, ALP SDK, Operating System, Vendor SDK, HW + HAL">
+  <rect x="0" y="0" width="1600" height="950" fill="#ffffff"/>
+  <rect x="10" y="10" width="1580" height="930" rx="18" fill="#ffffff" stroke="#e6e8f0" stroke-width="1.5"/>
+  <g font-family="'Segoe UI', system-ui, -apple-system, Helvetica, Arial, sans-serif">
+
+    <!-- Left rail -->
+    <rect x="24" y="28" width="6" height="894" rx="3" fill="#7c3aed"/>
+    <rect x="34" y="28" width="112" height="894" rx="14" fill="#17205e"/>
+    <polygon points="98,56 76,102 91,102 84,132 110,86 93,86 101,56" fill="#ffffff"/>
+    <text x="98" y="500" transform="rotate(-90 98 500)" text-anchor="middle" font-size="56" font-weight="800" fill="#ffffff" letter-spacing="6">E1M<tspan font-size="20" dy="-22">™</tspan></text>
+    <text x="52" y="500" transform="rotate(-90 52 500)" text-anchor="middle" font-size="12.5" font-weight="600" fill="#aeb6e0" letter-spacing="3">Scalable AI Smarter Edge</text>
+
+    <!-- Header wordmark -->
+    <polygon points="1428,34 1419,52 1427,52 1423,66 1438,46 1429,46 1435,34" fill="#2f6bff"/>
+    <text x="1446" y="52" font-size="20" font-weight="800" fill="#17205e" letter-spacing="1">ALP LAB</text>
+
+    <!-- down arrows between bands -->
+    <g fill="#aab2cf">
+      <rect x="260" y="218" width="4" height="10" rx="2"/><polygon points="254,228 270,228 262,238"/>
+      <rect x="260" y="600" width="4" height="10" rx="2"/><polygon points="254,610 270,610 262,620"/>
+      <rect x="260" y="712" width="4" height="10" rx="2"/><polygon points="254,722 270,722 262,732"/>
+      <rect x="260" y="824" width="4" height="10" rx="2"/><polygon points="254,834 270,834 262,844"/>
+    </g>
+
+    <!-- ============ Band 1 : AI Framework ============ -->
+    <text x="262" y="138" text-anchor="middle" font-size="17" font-weight="700" fill="#1b2a8f">AI Framework</text>
+    <text x="262" y="160" text-anchor="middle" font-size="13" fill="#6b7280">(on-device)</text>
+
+    <rect x="380" y="92" width="150" height="96" rx="10" fill="#f6f9ff" stroke="#2f6bff" stroke-width="1.5"/>
+    <text x="455" y="152" text-anchor="middle" font-size="30" font-weight="800" fill="#1b2a8f">TFLM</text>
+
+    <g font-size="12.5" fill="#374151">
+      <circle cx="558" cy="116" r="3" fill="#2f6bff"/><text x="568" y="120">Ethos-U (Alif AEN, NXP N93 / U55+U65)</text>
+      <circle cx="558" cy="150" r="3" fill="#2f6bff"/><text x="568" y="154">DRP-AI3 (Renesas V2N)</text>
+      <circle cx="906" cy="116" r="3" fill="#2f6bff"/><text x="916" y="120">CPU (reference kernels)</text>
+      <circle cx="906" cy="150" r="3" fill="#2f6bff"/><text x="916" y="154">DEEPX DX-M1 (V2M family)</text>
+    </g>
+
+    <text x="1190" y="104" font-size="12" font-weight="700" fill="#374151">· · ·  offline training only:</text>
+    <rect x="1190" y="116" width="148" height="60" rx="8" fill="#ffffff" stroke="#e3e7ef"/>
+    <text x="1264" y="152" text-anchor="middle" font-size="14" font-weight="700" fill="#ff6f00">TensorFlow</text>
+    <rect x="1350" y="116" width="150" height="60" rx="8" fill="#ffffff" stroke="#e3e7ef"/>
+    <text x="1425" y="152" text-anchor="middle" font-size="14" font-weight="700" fill="#ee4c2c">PyTorch</text>
+
+    <!-- ============ Band 2 : Dev Tooling ============ -->
+    <text x="262" y="282" text-anchor="middle" font-size="17" font-weight="700" fill="#1b2a8f">Dev Tooling</text>
+    <g fill="#fbfcfe" stroke="#e3e7ef">
+      <rect x="380" y="248" width="382" height="60" rx="10"/>
+      <rect x="778" y="248" width="382" height="60" rx="10"/>
+      <rect x="1176" y="248" width="382" height="60" rx="10"/>
+    </g>
+    <g font-size="12.5" fill="#374151" text-anchor="middle">
+      <text x="571" y="283">VS Code extension  ·  board.yaml + loader</text>
+      <text x="969" y="283">validate_board_yaml.py  ·  GUI configurator</text>
+      <text x="1367" y="283">program_eeprom.py  ·  per-OS bootstrap</text>
+    </g>
+
+    <!-- ============ Band 3 : ALP SDK ============ -->
+    <rect x="372" y="338" width="1186" height="250" rx="14" fill="#fbffff" stroke="#1fb6d6" stroke-width="2"/>
+    <text x="262" y="452" text-anchor="middle" font-size="18" font-weight="800" fill="#1b2a8f">ALP SDK</text>
+    <text x="262" y="476" text-anchor="middle" font-size="13" font-weight="600" fill="#2f6bff" font-family="Consolas, ui-monospace, Menlo, monospace">&lt;alp/*.h&gt;</text>
+
+    <!-- category headers -->
+    <g>
+      <rect x="386"  y="352" width="120" height="20" rx="10" fill="#2f6bff"/><text x="446"  y="366" text-anchor="middle" font-size="10.5" font-weight="700" fill="#ffffff">Peripherals</text>
+      <rect x="516"  y="352" width="120" height="20" rx="10" fill="#2f6bff"/><text x="576"  y="366" text-anchor="middle" font-size="10.5" font-weight="700" fill="#ffffff">Audio</text>
+      <rect x="646"  y="352" width="120" height="20" rx="10" fill="#2f6bff"/><text x="706"  y="366" text-anchor="middle" font-size="10.5" font-weight="700" fill="#ffffff">Camera</text>
+      <rect x="775"  y="352" width="120" height="20" rx="10" fill="#2f6bff"/><text x="835"  y="366" text-anchor="middle" font-size="10.5" font-weight="700" fill="#ffffff">Inference</text>
+      <rect x="905"  y="352" width="120" height="20" rx="10" fill="#2f6bff"/><text x="965"  y="366" text-anchor="middle" font-size="10.5" font-weight="700" fill="#ffffff">IoT / BLE</text>
+      <rect x="1035" y="352" width="120" height="20" rx="10" fill="#2f6bff"/><text x="1095" y="366" text-anchor="middle" font-size="10.5" font-weight="700" fill="#ffffff">Security</text>
+      <rect x="1165" y="352" width="120" height="20" rx="10" fill="#2f6bff"/><text x="1225" y="366" text-anchor="middle" font-size="10.5" font-weight="700" fill="#ffffff">Display / GUI</text>
+      <rect x="1295" y="352" width="120" height="20" rx="10" fill="#2f6bff"/><text x="1355" y="366" text-anchor="middle" font-size="10.5" font-weight="700" fill="#ffffff">HW Info</text>
+      <rect x="1424" y="352" width="120" height="20" rx="10" fill="#2f6bff"/><text x="1484" y="366" text-anchor="middle" font-size="10.5" font-weight="700" fill="#ffffff">Multi-proc</text>
+    </g>
+
+    <!-- category bullets -->
+    <g font-size="9.5" fill="#374151">
+      <text x="390"  y="392">– GPIO/I²C/SPI</text><text x="390"  y="409">– UART/PWM/ADC</text><text x="390"  y="426">– CAN/RTC/WDT/USB</text>
+      <text x="520"  y="392">– PDM in (mics)</text><text x="520"  y="409">– I²S out + amp</text><text x="520"  y="426">– TAS2563</text>
+      <text x="650"  y="392">– OV5640</text><text x="650"  y="409">– CAM_MUX</text>
+      <text x="779"  y="392">– dispatcher</text><text x="779"  y="409">– Ethos-U / DRP-AI</text><text x="779"  y="426">– DEEPX / CPU</text>
+      <text x="909"  y="392">– Wi-Fi 6</text><text x="909"  y="409">– MQTT</text><text x="909"  y="426">– BLE 5.4</text>
+      <text x="1039" y="392">– MbedTLS</text><text x="1039" y="409">– PSA Crypto</text><text x="1039" y="426">– OPTIGA TM</text>
+      <text x="1169" y="392">– SSD1306/1331</text><text x="1169" y="409">– LVGL</text>
+      <text x="1299" y="392">– EEPROM mfst</text><text x="1299" y="409">– BOARD_ID ADC</text><text x="1299" y="426">– alp/hw_info</text>
+      <text x="1428" y="392">– Mailbox</text><text x="1428" y="409">– Shared mem</text><text x="1428" y="426">– HW sem</text>
+    </g>
+
+    <!-- drivers + libraries -->
+    <rect x="386" y="490" width="1168" height="32" rx="8" fill="#f2f6ff" stroke="#dbe6ff"/>
+    <rect x="392" y="496" width="132" height="20" rx="10" fill="#2f6bff"/><text x="458" y="510" text-anchor="middle" font-size="10.5" font-weight="700" fill="#ffffff">80+ chip drivers</text>
+    <text x="534" y="510" font-size="10.5" fill="#374151" font-family="Consolas, ui-monospace, Menlo, monospace">lsm6dso · bmi323 · bmp581 · icm42670 · ina236 · tmp112 · tcal9538 · rv3028c7 · 24c128 · cc3501e · ssd13xx · …</text>
+
+    <rect x="386" y="528" width="1168" height="32" rx="8" fill="#f2f6ff" stroke="#dbe6ff"/>
+    <rect x="392" y="534" width="132" height="20" rx="10" fill="#2f6bff"/><text x="458" y="548" text-anchor="middle" font-size="10.5" font-weight="700" fill="#ffffff">User libraries</text>
+    <text x="534" y="548" font-size="10.5" fill="#374151"><tspan font-family="Consolas, ui-monospace, Menlo, monospace">(board.yaml `libraries:`)</tspan>   ETL · fmt · nlohmann_json · doctest · LVGL · MbedTLS · CMSIS-DSP · LittleFS</text>
+
+    <!-- ============ Band 4 : Operating System ============ -->
+    <text x="262" y="656" text-anchor="middle" font-size="17" font-weight="700" fill="#1b2a8f">Operating System</text>
+    <g fill="#fbfcfe" stroke="#e3e7ef">
+      <rect x="380" y="614" width="382" height="74" rx="10"/>
+      <rect x="778" y="614" width="382" height="74" rx="10"/>
+      <rect x="1176" y="614" width="382" height="74" rx="10"/>
+    </g>
+    <text x="571" y="660" text-anchor="middle" font-size="24" font-weight="800" fill="#1b2a8f">Bare-metal</text>
+    <text x="969" y="658" text-anchor="middle" font-size="24" font-weight="800" fill="#111827">yocto</text>
+    <text x="969" y="676" text-anchor="middle" font-size="9" font-weight="700" fill="#6b7280" letter-spacing="4">PROJECT</text>
+    <text x="1367" y="662" text-anchor="middle" font-size="22" font-weight="800" fill="#6b4fbb">Zephyr<tspan font-size="11" dy="-9">®</tspan></text>
+
+    <!-- ============ Band 5 : Vendor SDK ============ -->
+    <text x="262" y="768" text-anchor="middle" font-size="17" font-weight="700" fill="#1b2a8f">Vendor SDK</text>
+    <g fill="#fbfcfe" stroke="#e3e7ef">
+      <rect x="380" y="726" width="283" height="72" rx="10"/>
+      <rect x="679" y="726" width="283" height="72" rx="10"/>
+      <rect x="978" y="726" width="283" height="72" rx="10"/>
+      <rect x="1277" y="726" width="283" height="72" rx="10"/>
+    </g>
+    <g font-size="15" text-anchor="middle">
+      <text x="521"  y="767"><tspan font-weight="800" fill="#29a3dd">ALIF</tspan><tspan fill="#374151">  Ensemble (AEN)</tspan></text>
+      <text x="820"  y="767"><tspan font-weight="800" fill="#f7941e">NXP</tspan><tspan fill="#374151">  i.MX 93</tspan></text>
+      <text x="1119" y="767"><tspan font-weight="800" fill="#1856a7">RENESAS</tspan><tspan fill="#374151">  RZ/V2N</tspan></text>
+      <text x="1418" y="767"><tspan font-weight="800" fill="#1b2a8f">DEEPX</tspan><tspan fill="#374151">  DX-M1</tspan></text>
+    </g>
+
+    <!-- ============ Band 6 : HW + HAL ============ -->
+    <text x="262" y="878" text-anchor="middle" font-size="17" font-weight="700" fill="#1b2a8f">HW + HAL</text>
+    <g fill="#fbfcfe" stroke="#e3e7ef">
+      <rect x="380" y="838" width="582" height="68" rx="10"/>
+      <rect x="978" y="838" width="580" height="68" rx="10"/>
+    </g>
+    <text x="671" y="878" text-anchor="middle" font-size="15" font-weight="600" fill="#374151">E1M (35×35) + E1M-X (45×65) SoMs</text>
+    <text x="1268" y="878" text-anchor="middle" font-size="15" font-weight="600" fill="#374151">E1M-EVK / E1M-X-EVK carriers + vendor HALs</text>
+
+  </g>
+</svg>

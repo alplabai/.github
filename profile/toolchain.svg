@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1180 380" width="1180" height="380" role="img" aria-label="Alp Lab toolchain: You drive the VS Code extension or the tan CLI; tan reads the build-plan from alp-sdk and produces firmware">
+  <defs>
+    <marker id="ab" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#2f6bff"/>
+    </marker>
+    <marker id="ag" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#9aa3c0"/>
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="1180" height="380" fill="#ffffff"/>
+  <g font-family="'Segoe UI', system-ui, -apple-system, Helvetica, Arial, sans-serif">
+
+    <!-- edges -->
+    <g fill="none" stroke="#2f6bff" stroke-width="2">
+      <path d="M170,164 C200,140 205,120 230,106" marker-end="url(#ab)"/>
+      <path d="M170,190 L516,190" marker-end="url(#ab)"/>
+      <path d="M400,128 C455,150 500,150 556,162" marker-end="url(#ab)"/>
+      <path d="M700,172 C755,150 775,120 816,104" marker-end="url(#ab)"/>
+      <path d="M700,206 C755,235 775,262 816,280" marker-end="url(#ab)"/>
+    </g>
+    <path d="M822,126 C770,152 760,176 706,192" fill="none" stroke="#9aa3c0" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#ag)"/>
+
+    <!-- edge labels -->
+    <g font-size="12" font-weight="600" fill="#6b7280">
+      <text x="176" y="128">GUI</text>
+      <text x="330" y="182">CLI</text>
+      <text x="452" y="132">shells</text>
+      <text x="742" y="120">drives</text>
+      <text x="742" y="270">builds</text>
+    </g>
+    <text x="762" y="168" font-size="12" font-weight="600" fill="#9aa3c0">build-plan</text>
+
+    <!-- You -->
+    <rect x="40" y="150" width="130" height="64" rx="12" fill="#ffffff" stroke="#cdd4e6" stroke-width="1.5"/>
+    <text x="105" y="180" text-anchor="middle" font-size="17" font-weight="800" fill="#17205e">You</text>
+    <text x="105" y="199" text-anchor="middle" font-size="11.5" fill="#6b7280">developer</text>
+
+    <!-- vscode -->
+    <rect x="230" y="70" width="210" height="60" rx="12" fill="#ffffff" stroke="#cdd4e6" stroke-width="1.5"/>
+    <text x="335" y="96" text-anchor="middle" font-size="15" font-weight="700" fill="#17205e">alp-sdk-vscode</text>
+    <text x="335" y="115" text-anchor="middle" font-size="11.5" fill="#6b7280">VS Code extension</text>
+
+    <!-- tan (hub) -->
+    <rect x="520" y="150" width="180" height="80" rx="12" fill="#f2f6ff" stroke="#2f6bff" stroke-width="2"/>
+    <text x="610" y="185" text-anchor="middle" font-size="24" font-weight="800" fill="#1b2a8f">tan</text>
+    <text x="610" y="206" text-anchor="middle" font-size="12" fill="#374151">build CLI</text>
+
+    <!-- alp-sdk -->
+    <rect x="816" y="60" width="272" height="70" rx="12" fill="#ffffff" stroke="#cdd4e6" stroke-width="1.5"/>
+    <text x="952" y="90" text-anchor="middle" font-size="16" font-weight="700" fill="#17205e">alp-sdk</text>
+    <text x="952" y="110" text-anchor="middle" font-size="11.5" fill="#6b7280">planner + libraries</text>
+
+    <!-- firmware -->
+    <rect x="816" y="250" width="272" height="72" rx="12" fill="#ffffff" stroke="#cdd4e6" stroke-width="1.5"/>
+    <text x="952" y="281" text-anchor="middle" font-size="16" font-weight="700" fill="#17205e">firmware</text>
+    <text x="952" y="301" text-anchor="middle" font-size="11.5" fill="#6b7280">Zephyr · Yocto · bare-metal</text>
+
+  </g>
+</svg>

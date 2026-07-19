@@ -17,9 +17,9 @@ EDA tool.
 
 ---
 
-## 🧩 The two stacks
+## The two stacks
 
-### 🤖 Edge AI · E1M + Alp SDK
+### Edge AI · E1M + Alp SDK
 
 - **[E1M Standard 1.2](https://github.com/alplabai/e1m-spec)** — open,
   silicon-agnostic pinout + mechanical envelope for AI-capable
@@ -47,7 +47,7 @@ EDA tool.
   `tan` binary** — install `tan` + an SDK checkout and you build from the
   terminal with no editor required.
 
-### ✏️ Open EDA · Signex
+### Open EDA · Signex
 
 - **[Signex](https://github.com/alplabai/signex)** is an open-source,
   AI-first EDA suite built in Rust with GPU-accelerated rendering and an
@@ -66,49 +66,24 @@ EDA tool.
 
 ---
 
-## 🔗 How the toolchain fits together (user's view)
+## How the toolchain fits together
 
 You drive **one command surface**; it fans down to the SDK and out to a
 firmware image.  The VS Code extension is a GUI over the same `tan` binary
 — nothing you can do in the editor is off-limits from the terminal.
 
-```mermaid
-flowchart LR
-    you([You])
-    vscode["alp-sdk-vscode<br/>VS Code extension"]
-    tan["tan<br/>build CLI"]
-    sdk["alp-sdk<br/>planner + libraries"]
-    fw["firmware<br/>Zephyr · Yocto · bare-metal"]
+![Alp Lab toolchain — You drive the VS Code extension or the tan CLI; tan reads the build-plan from alp-sdk and produces firmware](./toolchain.svg)
 
-    you -->|GUI| vscode
-    you -->|CLI| tan
-    vscode -->|shells| tan
-    tan -->|drives| sdk
-    sdk -.->|build-plan| tan
-    tan -->|builds| fw
-```
+## The Alp SDK layer stack
 
-## 🏗 The Alp SDK layer stack
+A `board.yaml` at the top compiles down through each layer to silicon.
+Every layer is declarative and swappable — change the SoM, keep your source.
 
-A `board.yaml` on the left compiles down through each layer to silicon on
-the right.  Every layer is declarative and swappable — change the SoM,
-keep your source.
-
-```mermaid
-flowchart LR
-    A["🧠 AI Models &amp; Pipeline<br/>train · compile → .alpmodel"]
-    B["🛠 Dev Tooling<br/>board.yaml · tan · VS Code"]
-    C["📦 Alp SDK — alp/*.h<br/>peripherals · inference · IPC<br/>80+ drivers"]
-    D["💠 OS · per-core<br/>Zephyr · Yocto · bare-metal"]
-    E["🔩 Vendor SDK<br/>Alif · Renesas · NXP · DEEPX"]
-    F["⚙️ Hardware + HAL<br/>E1M · E1M-X SoMs + NPU"]
-
-    A --> B --> C --> D --> E --> F
-```
+![Alp SDK layer stack — AI Framework, Dev Tooling, ALP SDK, Operating System, Vendor SDK, HW + HAL](./e1m-stack.svg)
 
 ---
 
-## 📊 Current status
+## Current status
 
 - **Alp SDK — `v0.11.1`.**  Every chip driver, peripheral wrapper, and
   example builds clean on `native_sim`; two SoM families now carry
@@ -124,9 +99,9 @@ flowchart LR
 
 ---
 
-## 📚 Featured repositories
+## Featured repositories
 
-### 🤖 Edge AI · E1M + Alp SDK
+### Edge AI · E1M + Alp SDK
 
 | Repository | Description |
 |---|---|
@@ -137,7 +112,7 @@ flowchart LR
 | [**e1m-spec**](https://github.com/alplabai/e1m-spec) | E1M open-standard pinout + mechanical envelope (35×35 / 312-pad + 45×65 mm / 496-pad) |
 | [**alp-zephyr-modules**](https://github.com/alplabai/alp-zephyr-modules) | Out-of-tree Zephyr board files for the E1M-* EVKs |
 
-### ✏️ Open EDA · Signex
+### Open EDA · Signex
 
 | Repository | Description |
 |---|---|
@@ -148,7 +123,7 @@ flowchart LR
 
 ---
 
-## 🧰 Tech stack
+## Tech stack
 
 **Edge AI**: Zephyr RTOS, Yocto, Alif Ensemble, Renesas RZ/V2N, NXP
 i.MX 93, DEEPX DX-M1, TFLite Micro, Arm Ethos-U, Renesas DRP-AI, MbedTLS,
@@ -160,7 +135,7 @@ LVGL, CMSIS-DSP.  Toolchain: `tan` build CLI (Rust), VS Code extension
 
 ---
 
-## 🚀 Get involved
+## Get involved
 
 - **[Alp SDK](https://github.com/alplabai/alp-sdk)** — embedded firmware
   on the open E1M pinout; rendered docs at
