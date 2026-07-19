@@ -9,8 +9,8 @@ firmware framework that targets it, to **Signex**, our open-source AI-first
 EDA tool.
 
 ![E1M](https://img.shields.io/badge/E1M-open%20standard-2563eb)
-![Alp SDK](https://img.shields.io/badge/Alp%20SDK-v0.11.1-16a34a)
-![Signex](https://img.shields.io/badge/Signex-v0.14.0-9333ea)
+![Alp SDK](https://img.shields.io/github/v/release/alplabai/alp-sdk?label=Alp%20SDK&color=16a34a)
+![Signex](https://img.shields.io/github/v/release/alplabai/signex?label=Signex&color=9333ea)
 ![License](https://img.shields.io/badge/core-Apache--2.0-64748b)
 
 </div>
@@ -90,17 +90,18 @@ flowchart LR
 
 ## 🏗 The Alp SDK layer stack
 
-A `board.yaml` at the top compiles down to silicon.  Every layer is
-declarative and swappable — change the SoM, keep your source.
+A `board.yaml` on the left compiles down through each layer to silicon on
+the right.  Every layer is declarative and swappable — change the SoM,
+keep your source.
 
 ```mermaid
-flowchart TB
-    A["🧠 AI Models &amp; Pipeline<br/>train off-device · compile → one fat .alpmodel · Vela / DRP-AI / dxcom / TFLM blobs"]
-    B["🛠 Dev Tooling<br/>board.yaml · tan CLI · VS Code extension · alp model build"]
-    C["📦 Alp SDK — alp/*.h<br/>peripherals · audio · camera · inference runtime · IoT/BLE · security · storage · DSP · heterogeneous IPC · 80+ drivers"]
-    D["💠 OS · per-core slice<br/>Zephyr (M-class) · Yocto (A-class) · bare-metal — peers on one SoM"]
-    E["🔩 Vendor SDK<br/>Alif Ensemble · Renesas RZ/V2N · NXP i.MX 93 · DEEPX DX-M1 — Ethos-U / DRP-AI / dx_rt runtimes"]
-    F["⚙️ Hardware + HAL<br/>E1M 35×35 mm · E1M-X 45×65 mm SoMs + NPU silicon · E1M-EVK reference boards"]
+flowchart LR
+    A["🧠 AI Models &amp; Pipeline<br/>train · compile → .alpmodel"]
+    B["🛠 Dev Tooling<br/>board.yaml · tan · VS Code"]
+    C["📦 Alp SDK — alp/*.h<br/>peripherals · inference · IPC<br/>80+ drivers"]
+    D["💠 OS · per-core<br/>Zephyr · Yocto · bare-metal"]
+    E["🔩 Vendor SDK<br/>Alif · Renesas · NXP · DEEPX"]
+    F["⚙️ Hardware + HAL<br/>E1M · E1M-X SoMs + NPU"]
 
     A --> B --> C --> D --> E --> F
 ```
