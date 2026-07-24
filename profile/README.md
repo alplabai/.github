@@ -10,6 +10,7 @@ EDA tool.
 
 ![E1M](https://img.shields.io/badge/E1M-open%20standard-2563eb)
 ![Alp SDK](https://img.shields.io/github/v/release/alplabai/alp-sdk?label=Alp%20SDK&color=16a34a)
+![tan](https://img.shields.io/github/v/release/alplabai/tan-cli?label=tan&color=ea580c)
 ![Signex](https://img.shields.io/github/v/release/alplabai/signex?label=Signex&color=9333ea)
 ![License](https://img.shields.io/badge/core-Apache--2.0-64748b)
 
@@ -85,12 +86,18 @@ Every layer is declarative and swappable — change the SoM, keep your source.
 
 ## Current status
 
-- **Alp SDK — `v0.11.1`.**  Every chip driver, peripheral wrapper, and
+- **Alp SDK** — every chip driver, peripheral wrapper, and
   example builds clean on `native_sim`; two SoM families now carry
   silicon evidence — E1M-X V2N (verified v0.6) and E1M-AEN801 (Alif
   Ensemble E8 peripheral matrix + NPU inference, verified v0.8).
   Remaining families (i.MX 93, V2N-M1/DEEPX, AEN30x–70x) are pre-silicon.
-- **Signex — `v0.14.0`, the Footprint Editor milestone.**  The `.snxfpt`
+- **tan** — the build CLI resolves the SDK with zero flags
+  (four-tier precedence: `--sdk-root` > project pin > machine-global default
+  > auto-discovery), adds `tan kconfig` (board-scoped symbol menu feeding the
+  VS Code `prj.conf` LSP), and ships build-provenance-attested release
+  binaries — including a pinned glibc 2.31 floor and fully-static musl assets
+  for older distros and containers.
+- **Signex — the Footprint Editor milestone.**  The `.snxfpt`
   pad + parametric-sketch editor is live (Apache-clean Newton-LM
   constraint solver, 19 constraint kinds, bake to pads / silk /
   courtyard).  Carries forward the v0.13 clean-room schematic renderer and
