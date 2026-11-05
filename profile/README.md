@@ -152,7 +152,6 @@ Every layer is declarative and swappable — change the SoM, keep your source.
 | [**gd32-bridge-firmware**](https://github.com/alplabai/gd32-bridge-firmware) | GD32G553 bridge firmware for E1M-X SoMs |
 | [**cc3501e-bridge-firmware**](https://github.com/alplabai/cc3501e-bridge-firmware) | CC3501E Wi-Fi 6 + BLE bridge firmware for E1M-AEN SoMs |
 | [**alp-sdk-community**](https://github.com/alplabai/alp-sdk-community) | Community-contributed chip drivers + libraries — consumable from the alp-sdk workspace |
-| [**alp-zephyr-modules**](https://github.com/alplabai/alp-zephyr-modules) | Out-of-tree Zephyr board files for the E1M EVKs |
 
 ### Open EDA · Signex
 
